@@ -1,0 +1,26 @@
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
+
+#top_video {
+	position: relative;
+	width: 100vw;
+  height: 100vh;
+}
+
+#content_fg {
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+}
+#content_bg {
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+}
+
+video {
+  width: 100%;
+}
