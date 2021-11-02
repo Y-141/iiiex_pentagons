@@ -9,18 +9,29 @@
 </head>
 
 <body>
+
+  <audio id="audio" loop src="images/bgm.mp3"></audio>
+
   <div id="top_video">
+    <div id="title_box">
+      <p>Pentagons</p>
+      <img id="play_button" src="images/play_button.png">
+    </div>
+
     <div id="content_fg">
       <video autoplay loop playsinline muted id="fg_video">
-        <source src="images/monkey.mp4" type="video/mp4">
+        <source src="images/medaka_without_bg.mp4" type="video/mp4">
       </video>
     </div>
   
     <div id="content_bg">
       <video autoplay loop playsinline muted id="bg_video">
-        <source src="images/squirrel.mp4" type="video/mp4">
+        <source src="images/medaka_with_bg.mp4" type="video/mp4">
       </video>
     </div>
+
+    <div id="button">SWITCH</div>
   </div>
+
 </body>
 </html>
