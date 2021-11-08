@@ -2,6 +2,10 @@ $(function() {
   
   $('#play_button').click(function(){
     $('#audio').get(0).play();
+    $('#fg_video').get(0).currentTime = 0;
+    $('#bg_video').get(0).currentTime = 0;
+    $('#fg_video').get(0).play();
+    $('#bg_video').get(0).play();
     $('#title_box').fadeOut();
     $('#button').fadeIn();
   })
