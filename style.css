@@ -88,6 +88,21 @@ video {
   width: 100%;
 }
 
+#seekbar {
+  display: none;
+  cursor : pointer;
+  position: absolute;
+  bottom: 15%;
+  left:50%;
+  transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  width: 90%;
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(#999, #999) no-repeat #eee;
+}
+
 #button{
   display: none;
   cursor : pointer;
@@ -138,6 +153,10 @@ video {
     transform: translate(0%, -50%);
     -webkit-transform: translate(0%, -50%);
     -ms-transform: translate(0%, -50%);
+  }
+
+  #seekbar {
+    top: calc(100vw*0.9*0.5625 + 5px);
   }
 
   #button {
