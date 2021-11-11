@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <title>矢印たち</title>
   <link rel="stylesheet" href="https://y-141.github.io/iiiex_pentagons/style.css">
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/desvg@1.0.2/desvg.min.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </head>
 
@@ -31,7 +32,14 @@
       </video>
     </div>
 
-    <div id="button">SWITCH</div>
+    <!-- <div id="button">SWITCH</div> -->
+
+    <div id="button_turtle" class="button">
+      <img class="desvg icon" id="icon_turtle" src="images/icon_turtle.svg">
+    </div>
+    <div id="button_star" class="button">
+      <img class="desvg icon" id="icon_turtle" src="images/icon_star.svg">
+    </div>
 
     <div id="seekbar"></div>
   </div>
