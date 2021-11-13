@@ -1,31 +1,23 @@
-body{
+body {
   margin: 0px;
   padding: 0px;
-  
 }
 
 body {
-  background: 
-    radial-gradient(rgb(40, 40, 40) 3px, transparent 4px),
-    radial-gradient(rgb(40, 40, 40) 3px, transparent 4px),
-    linear-gradient(#000 4px, transparent 0),
-    linear-gradient(45deg, transparent 74px, transparent 75px, rgb(40, 40, 40) 75px, rgb(40, 40, 40) 76px, transparent 77px, transparent 109px),
-    linear-gradient(-45deg, transparent 75px, transparent 76px, rgb(40, 40, 40) 76px, rgb(40, 40, 40) 77px, transparent 78px, transparent 109px),
-  #000;
-  background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+  background: radial-gradient(rgb(40, 40, 40) 3px, transparent 4px), radial-gradient(rgb(40, 40, 40) 3px, transparent 4px), linear-gradient(#000 4px, transparent 0), linear-gradient(45deg, transparent 74px, transparent 75px, rgb(40, 40, 40) 75px, rgb(40, 40, 40) 76px, transparent 77px, transparent 109px), linear-gradient(-45deg, transparent 75px, transparent 76px, rgb(40, 40, 40) 76px, rgb(40, 40, 40) 77px, transparent 78px, transparent 109px), #000;
+  background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
   background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
 }
 
-
 #top_video {
-	position: relative;
-	width: 100vw;
+  position: relative;
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
 }
 
-#title_box{
+#title_box {
   z-index: 5;
   position: relative;
   padding: 0.5em 1.5em;
@@ -37,7 +29,8 @@ body {
   width: 30vw;
   height: 20vw;
 }
-#title_box:before, #title_box:after{
+
+#title_box:before, #title_box:after {
   content: '';
   position: absolute;
   top: -10px;
@@ -46,39 +39,48 @@ body {
   height: calc(100% + 20px);
   background-color: white;
 }
-#title_box:before {left: 10px;}
-#title_box:after {right: 10px;}
+
+#title_box:before {
+  left: 10px;
+}
+
+#title_box:after {
+  right: 10px;
+}
+
 #title_box p {
   display: inline-block;
   line-height: 20vw;
   font-size: 4vw;
-  margin: 0; 
+  margin: 0;
   padding: 0;
   color: white;
 }
+
 #play_button {
-  position:absolute;
+  position: absolute;
   height: 4vw;
   width: auto;
-  top:50%;
+  top: 50%;
   transform: translate(20%, -50%);
   -webkit-transform: translate(20%, -50%);
   -ms-transform: translate(20%, -50%);
-  cursor : pointer;
+  cursor: pointer;
 }
 
 #content_fg {
-	position: absolute;
-	width: 90%;
-	z-index: 2;
+  position: absolute;
+  width: 90%;
+  z-index: 2;
   left: 0;
   right: 0;
   margin: auto;
 }
+
 #content_bg {
-	position: absolute;
-	width: 90%;
-	z-index: 1;
+  position: absolute;
+  width: 90%;
+  z-index: 1;
   left: 0;
   right: 0;
   margin: auto;
@@ -90,10 +92,10 @@ video {
 
 #seekbar {
   display: none;
-  cursor : pointer;
+  cursor: pointer;
   position: absolute;
   bottom: calc((100vh - 90vw*0.5625)/2 - 1vh);
-  left:50%;
+  left: 50%;
   transform: translate(-50%, 0%);
   -webkit-transform: translate(-50%, 0%);
   -ms-transform: translate(-50%, 0%);
@@ -103,23 +105,23 @@ video {
   background: linear-gradient(#999, #999) no-repeat #eee;
 }
 
-#button{
+#button {
   display: none;
-  cursor : pointer;
+  cursor: pointer;
   position: absolute;
   right: 7vw;
   bottom: calc((100vh - 90vw*0.5625)/2 + 2vh);
   z-index: 10;
   /* display: block; */
   text-decoration: none;
-  height:8vw;
+  height: 8vw;
   width: 8vw;
   line-height: 8vw;
   font-size: 1.5vw;
   text-align: center;
   color: #afb5b6;
   border-radius: 50%;
-  border:solid 3px #848686;
+  border: solid 3px #848686;
   /* background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00b5e5), color-stop(100%, #008db2)); */
   background: -webkit-linear-gradient(top, #9a9d9e, #737575);
   background: -moz-linear-gradient(top, #9a9d9e, #737575);
@@ -131,7 +133,8 @@ video {
   box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.5), 0px 2px 2px rgba(0, 0, 0, 0.2);
   text-shadow: -1px -1px rgba(255, 255, 255, 0.5), 1px 1px rgba(0, 0, 0, 0.5);
 }
-#button:active{
+
+#button:active {
   /* -ms-transform: translateY(2px); */
   /* -webkit-transform: translateY(2px); */
   /* transform: translateY(2px); */
@@ -139,6 +142,55 @@ video {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
 }
 
+/* 切り替えボタンのデザイン */
+
+.button {
+  width: 5vw;
+  height: 5vw;
+  bottom: calc((100vh - 90vw*0.5625)/2 + 2vh);
+  background-color: #8e8e8e;
+  position: absolute;
+  border-radius: 18%;
+  display: none;
+  box-shadow: 0px 0px 19px -8px rgba(0, 0, 0, 0.6);
+}
+
+#button_turtle {
+  right: 11vw;
+  z-index: 10;
+}
+
+#button_star {
+  right: 5vw;
+  z-index: 10;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#icon_turtle {
+  height: 70%;
+}
+
+#icon_star {
+  height: 55%;
+}
+
+#icon_turtle path {
+  fill: #dfdfdf;
+  stroke: none;
+}
+
+#icon_turtle ellipse {
+  fill: #dfdfdf;
+  stroke: none;
+}
+
+/* --------------------- */
 
 @media (max-width: 599px) {
   #top_video {
@@ -146,7 +198,6 @@ video {
     display: block;
     margin-top: 5vh;
   }
-
   #title_box {
     position: absolute;
     top: calc(90vw*0.28125);
@@ -154,18 +205,16 @@ video {
     -webkit-transform: translate(0%, -50%);
     -ms-transform: translate(0%, -50%);
   }
-
   #seekbar {
     top: calc(100vw*0.9*0.5625 + 5px);
   }
-
   #button {
     top: calc(100vw*0.5625 + 30px);
     left: 50vw;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    height:12vw;
+    height: 12vw;
     width: 12vw;
     line-height: 12vw;
   }
