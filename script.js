@@ -14,6 +14,7 @@ $(function() {
     $('#button').fadeIn();
     $('.button').fadeIn();
     $('#seekbar').fadeIn();
+    $('#seekbar_pause_button').fadeIn();
   })
   
   //切り替えボタン
@@ -81,5 +82,21 @@ $(function() {
     const position = Math.round(e.offsetX / $('#seekbar').width() *100)/100;
     $('#fg_video').get(0).currentTime = duration * position;
     $('#bg_video').get(0).currentTime = duration * position;
+  });
+
+  $('#seekbar_pause_button').click(function(){
+    $('#fg_video').get(0).pause();
+    $('#bg_video').get(0).pause();
+    $('#bg_video').get(0).currentTime = $('#fg_video').get(0).currentTime;
+    $('#fg_video').get(0).currentTime = $('#bg_video').get(0).currentTime;
+    $(this).hide();
+    $('#seekbar_play_button').show();
+  });
+
+  $('#seekbar_play_button').click(function(){
+    $('#fg_video').get(0).play();
+    $('#bg_video').get(0).play();
+    $(this).hide();
+    $('#seekbar_pause_button').show();
   });
 });
