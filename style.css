@@ -128,7 +128,11 @@ video {
   right: 5%;
   height: 10px;
   border-radius: 5px;
-  background: linear-gradient(#999, #999) no-repeat #eee;
+  /* background: linear-gradient(90deg, #999, #999) no-repeat #eee; */
+  /* background-color: #999, #eee; */
+  background-repeat: no-repeat, no-repeat;
+  /* background-size: 50%, 50%; */
+  background: linear-gradient(90deg, #999 0%, #999 50%, #eee 50%, #eee 100%);
 }
 
 #button {
@@ -232,7 +236,7 @@ video {
     -ms-transform: translate(0%, -50%);
   }
   #seekbar {
-    top: calc(100vw*0.9*0.5625 + 5px);
+    /* top: calc(100vw*0.9*0.5625 + 5px); */
   }
   .seekbar_operation {
     top: calc(100vw*0.9*0.5625 + 2.5px);

@@ -74,7 +74,9 @@ $(function() {
   $('#fg_video').on('timeupdate', function() {
     const duration = Math.round($('#fg_video').get(0).duration);
     const percent = Math.round($('#fg_video').get(0).currentTime / duration *1000)/10 + '%';
-    $('#seekbar').css('background-size', percent);
+    const css_b = 'linear-gradient(90deg, #999 0%, #999 '+ percent + ', #eee ' + percent + ', #eee 100%)';
+    // $('#seekbar').css('background-size', percent);
+    $('#seekbar').css('background', css_b);
   });
 
   $('#seekbar').click(function(e){
