@@ -85,6 +85,14 @@ $(function() {
     const css_b = 'linear-gradient(90deg, #999 0%, #999 '+ percent + ', #eee ' + percent + ', #eee 100%)';
     // $('#seekbar').css('background-size', percent);
     $('#seekbar').css('background', css_b);
+    //フェードアウト用．終了7秒前から
+    //線形に音量downするより2乗でやるといい感じだった
+    if ($('#fg_video').get(0).currentTime > duration-7.0) {
+      $('#audio').get(0).volume = (duration-$('#fg_video').get(0).currentTime)**2/49.0;
+      console.log($('#audio').get(0).volume);
+    }else{
+      $('#audio').get(0).volume = 1.0;
+    }
   });
 
   $('#seekbar').click(function(e){
