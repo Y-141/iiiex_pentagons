@@ -119,4 +119,37 @@ $(function() {
     $(this).hide();
     $('#seekbar_pause_button').show();
   });
+
+  //動物が切り替わるたびにfgに切り替え
+  $('#bg_video').on('timeupdate', function(){
+    if ($('#bg_video').get(0).currentTime >= 9.7 && $('#bg_video').get(0).currentTime <= 10.5){
+      $('#content_bg').css('z-index', '1');
+      $('#content_fg').css('z-index', '2');
+    }
+    else if ($('#bg_video').get(0).currentTime >= 19.7 && $('#bg_video').get(0).currentTime <= 20.5){
+      $('#content_bg').css('z-index', '1');
+      $('#content_fg').css('z-index', '2');
+    }
+    else if ($('#bg_video').get(0).currentTime >= 29.7 && $('#bg_video').get(0).currentTime <= 30.5){
+      $('#content_bg').css('z-index', '1');
+      $('#content_fg').css('z-index', '2');
+    }
+    else if ($('#bg_video').get(0).currentTime >= 39.7 && $('#bg_video').get(0).currentTime <= 40.5){
+      $('#content_bg').css('z-index', '1');
+      $('#content_fg').css('z-index', '2');
+    }
+    else if ($('#bg_video').get(0).currentTime >= 49.7 && $('#bg_video').get(0).currentTime <= 50.5){
+      $('#content_bg').css('z-index', '1');
+      $('#content_fg').css('z-index', '2');
+    }
+    else if ($('#bg_video').get(0).currentTime >= 59.7 && $('#bg_video').get(0).currentTime <= 60.5){
+      $('#content_bg').css('z-index', '1');
+      $('#content_fg').css('z-index', '2');
+    }
+    else if ($('#bg_video').get(0).currentTime >= 69.7 && $('#bg_video').get(0).currentTime <= 70.5){
+      $('#content_bg').css('z-index', '1');
+      $('#content_fg').css('z-index', '2');
+    }
+  })
+
 });
