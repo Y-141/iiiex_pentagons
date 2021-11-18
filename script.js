@@ -4,13 +4,16 @@ window.addEventListener('load', function () {
 
 $(function() {
   //動画，音声開始ボタン
-  $('#play_button').click(function(){
+  $('#open_play_button').click(function(){
+    $('#open_bg').hide();
+    $('#open_play_button').hide();
+    $('#content_fg').show();
+    $('#content_bg').show();
     $('#audio').get(0).play();
     $('#fg_video').get(0).currentTime = 0;
     $('#bg_video').get(0).currentTime = 0;
     $('#fg_video').get(0).play();
     $('#bg_video').get(0).play();
-    $('#title_box').fadeOut();
     $('#button').fadeIn();
     $('.button').fadeIn();
     $('#seekbar').fadeIn();
@@ -89,6 +92,7 @@ $(function() {
   $('#seekbar_pause_button').click(function(){
     $('#fg_video').get(0).pause();
     $('#bg_video').get(0).pause();
+    $('#audio').get(0).pause();
     $('#bg_video').get(0).currentTime = $('#fg_video').get(0).currentTime;
     $('#fg_video').get(0).currentTime = $('#bg_video').get(0).currentTime;
     $(this).hide();
@@ -98,6 +102,7 @@ $(function() {
   $('#seekbar_play_button').click(function(){
     $('#fg_video').get(0).play();
     $('#bg_video').get(0).play();
+    $('#audio').get(0).play();
     $(this).hide();
     $('#seekbar_pause_button').show();
   });

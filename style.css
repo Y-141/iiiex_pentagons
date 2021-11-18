@@ -17,58 +17,39 @@ body {
   align-items: center;
 }
 
-#title_box {
-  z-index: 5;
-  position: relative;
-  padding: 0.5em 1.5em;
-  border-top: solid 2px white;
-  border-bottom: solid 2px white;
+#open_bg {
+  position: absolute;
+  width: 90%;
+  z-index: 3;
   left: 0;
   right: 0;
   margin: auto;
-  width: 30vw;
-  height: 20vw;
 }
 
-#title_box:before, #title_box:after {
-  content: '';
+#open_bg img {
+  width: 100%;
+  height: auto;
+}
+
+#open_play_button {
   position: absolute;
-  top: -10px;
-  width: 2px;
-  height: -webkit-calc(100% + 20px);
-  height: calc(100% + 20px);
-  background-color: white;
-}
-
-#title_box:before {
-  left: 10px;
-}
-
-#title_box:after {
-  right: 10px;
-}
-
-#title_box p {
-  display: inline-block;
-  line-height: 20vw;
-  font-size: 4vw;
-  margin: 0;
-  padding: 0;
-  color: white;
-}
-
-#play_button {
-  position: absolute;
-  height: 4vw;
-  width: auto;
+  width: 10%;
+  z-index: 4;
   top: 50%;
-  transform: translate(20%, -50%);
-  -webkit-transform: translate(20%, -50%);
-  -ms-transform: translate(20%, -50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   cursor: pointer;
 }
 
+#open_play_button img {
+  width: 100%;
+  height: auto;
+}
+
 #content_fg {
+  display: none;
   position: absolute;
   width: 90%;
   z-index: 2;
@@ -78,6 +59,7 @@ body {
 }
 
 #content_bg {
+  display: none;
   position: absolute;
   width: 90%;
   z-index: 1;
@@ -228,27 +210,21 @@ video {
     display: block;
     margin-top: 5vh;
   }
-  #title_box {
+  /* #title_box {
     position: absolute;
     top: calc(90vw*0.28125);
     transform: translate(0%, -50%);
     -webkit-transform: translate(0%, -50%);
     -ms-transform: translate(0%, -50%);
-  }
+  } */
   #seekbar {
-    /* top: calc(100vw*0.9*0.5625 + 5px); */
+    top: calc(100vw*0.9*0.5625 + 5px);
   }
   .seekbar_operation {
     top: calc(100vw*0.9*0.5625 + 2.5px);
   }
-  #button {
-    top: calc(100vw*0.5625 + 30px);
-    left: 50vw;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    height: 12vw;
-    width: 12vw;
-    line-height: 12vw;
+
+  #open_play_button {
+    top: calc(100vw*0.45*0.5625);
   }
 }
