@@ -19,6 +19,11 @@ $(function() {
     $('#seekbar').fadeIn();
     $('#seekbar_pause_button').fadeIn();
   })
+
+  //動画終了時
+  $('#fg_video').on('ended',function() {
+    $('#audio').get(0).pause();
+  });
   
   //切り替えボタン
   $('#button').click(function(){
