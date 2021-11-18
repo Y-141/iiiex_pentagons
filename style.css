@@ -176,7 +176,7 @@ video {
 
 /* --------------------- */
 
-@media (max-width: 700px) {
+@media (max-width: 599px) {
   #top_video {
     position: relative;
     display: block;
