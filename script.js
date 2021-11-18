@@ -16,6 +16,7 @@ $(function() {
     $('#bg_video').get(0).play();
     $('#button').fadeIn();
     $('.button').fadeIn();
+    $('.button_text').fadeIn();
     $('#seekbar').fadeIn();
     $('#seekbar_pause_button').fadeIn();
   })
@@ -25,54 +26,53 @@ $(function() {
     $('#audio').get(0).pause();
   });
   
+  //----------------------------------------------
   //切り替えボタン
-  $('#button').click(function(){
-    if($('#content_fg').css('z-index') == '2'){
+
+  $('#switch_button').click(function () {
+    if ($('#content_fg').css('z-index') == '2') { //矢印が上・アイコンはカメ
       $('#content_fg').css('z-index', '1');
       $('#content_bg').css('z-index', '2');
-    }else{
+
+      $(this).children('img').attr('src', 'images/icon_star.png');
+      $(this).children('img').attr('id', 'icon_star');
+
+      // $(this).html('<img class="desvg icon" id="icon_star" src="images/icon_star.svg">');
+      // deSVG('.desvg', true);
+      // $(this).find('path').css('fill', '#8e8e8e');
+    } else { //実際の動画が上・アイコンは星
       $('#content_bg').css('z-index', '1');
       $('#content_fg').css('z-index', '2');
+
+      $(this).children('img').attr('src', 'images/icon_turtle.png');
+      $(this).children('img').attr('id', 'icon_turtle');
+
+      // $(this).html('<img class="desvg icon" id="icon_turtle" src="images/icon_turtle.svg">');
+      // deSVG('.desvg', true);
+      // $(this).find('path, ellipse').css('fill', '#8e8e8e');
     }
   });
 
-
-  //----------------------------------------------
-  //切り替えボタンの編集
-
-  $('#button_turtle').hover(
-    function() {
-      $(this).css('background-color', '#dfdfdf');
-      $(this).find('path, ellipse').css('fill', '#8e8e8e');
-    },
-    function() {
-      $(this).css('background-color', '#8e8e8e');
-      $(this).find('path, ellipse').css('fill', '#dfdfdf');
-    }
-  );
-
-  $('#button_star').hover(
-    function () {
-      $(this).css('background-color', '#dfdfdf');
-      $(this).find('path').css('fill', '#8e8e8e');
-    },
-    function () {
-      $(this).css('background-color', '#8e8e8e');
-      $(this).find('path').css('fill', '#dfdfdf');
-    }
-  );
-
-
-  $('#button_turtle').click(function () {
-    $('#content_fg').css('z-index', '1');
-    $('#content_bg').css('z-index', '2');
-  });
-
-  $('#button_star').click(function () {
-    $('#content_fg').css('z-index', '2');
-    $('#content_bg').css('z-index', '1');
-  });
-
+  // $('#switch_button').hover(
+  //   function () {
+  //     if ($('#switch_button').children().is('#icon_turtle')) {
+  //       $(this).css('background-color', '#dfdfdf');
+  //       $(this).find('path, ellipse').css('fill', '#8e8e8e');
+  //     } else {
+  //       $(this).css('background-color', '#dfdfdf');
+  //       $(this).find('path').css('fill', '#8e8e8e');
+  //     }
+  //   },
+  //   function() {
+  //     if ($('#switch_button').children().is('#icon_turtle')) {
+  //       $(this).css('background-color', '#8e8e8e');
+  //       $(this).find('path, ellipse').css('fill', '#dfdfdf');
+  //     } else {
+  //       $(this).css('background-color', '#8e8e8e');
+  //       $(this).find('path').css('fill', '#dfdfdf');
+  //     }
+  //   }
+  // );
 
   //----------------------------------------------
 
