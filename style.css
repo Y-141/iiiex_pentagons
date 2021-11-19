@@ -262,4 +262,8 @@ video {
   #open_play_button {
     top: calc(100vw*0.45*0.5625);
   }
+
+  #replay_button {
+    top: calc(100vw*0.45*0.5625);
+  }
  }
