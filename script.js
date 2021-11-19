@@ -22,12 +22,12 @@ $(function() {
   })
 
   //動画終了時
-  $('#fg_video').on('ended',function() {
-    $('#audio').get(0).pause();
-    $('#replay_button').fadeIn();
-    $('#seekbar_pause_button').hide();
-    $('#seekbar_play_button').show();
-  });
+  // $('#fg_video').on('ended',function() {
+  //   $('#audio').get(0).pause();
+  //   $('#replay_button').fadeIn();
+  //   $('#seekbar_pause_button').hide();
+  //   $('#seekbar_play_button').show();
+  // });
 
   //replay
   $('#replay_button').click(function(){
@@ -40,6 +40,8 @@ $(function() {
     // $('#content_fg').show();
     // $('#content_bg').show();
     $('#audio').get(0).play();
+    $('#seekbar_pause_button').show();
+    $('#seekbar_play_button').hide();
     // $('#button').fadeIn();
     // $('.button').fadeIn();
     // $('.button_text').fadeIn();
@@ -98,7 +100,7 @@ $(function() {
   //----------------------------------------------
 
 
-
+  var flag = 0; //動画末尾に到達したかのフラグ
   //シークバー
   $('#fg_video').on('timeupdate', function() {
     const duration = Math.round($('#fg_video').get(0).duration);
@@ -114,7 +116,23 @@ $(function() {
     }else{
       $('#audio').get(0).volume = 1.0;
     }
-    $('#replay_button').hide();
+    if (duration <= Math.round($('#fg_video').get(0).currentTime)) {
+      console.log(flag);
+      // if (flag==0){
+      //   $('#audio').get(0).pause();
+      //   $('#replay_button').fadeIn();
+      //   $('#seekbar_pause_button').hide();
+      //   $('#seekbar_play_button').show();
+      //   flag = 1;
+      // }
+      $('#audio').get(0).pause();
+      $('#replay_button').fadeIn();
+      $('#seekbar_pause_button').hide();
+      $('#seekbar_play_button').show();
+    }else{
+      $('#replay_button').fadeOut();
+      flag = 0;
+    }
   });
 
   $('#seekbar').click(function(e){
