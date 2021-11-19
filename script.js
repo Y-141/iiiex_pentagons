@@ -25,19 +25,21 @@ $(function() {
   $('#fg_video').on('ended',function() {
     $('#audio').get(0).pause();
     $('#replay_button').fadeIn();
+    $('#seekbar_pause_button').hide();
+    $('#seekbar_play_button').show();
   });
 
   //replay
   $('#replay_button').click(function(){
+    $('#fg_video').get(0).currentTime = 0;
+    $('#bg_video').get(0).currentTime = 0;
+    $('#fg_video').get(0).play();
+    $('#bg_video').get(0).play();
     // $('#open_bg').hide();
     $('#replay_button').fadeOut();
     // $('#content_fg').show();
     // $('#content_bg').show();
     $('#audio').get(0).play();
-    $('#fg_video').get(0).currentTime = 0;
-    $('#bg_video').get(0).currentTime = 0;
-    $('#fg_video').get(0).play();
-    $('#bg_video').get(0).play();
     // $('#button').fadeIn();
     // $('.button').fadeIn();
     // $('.button_text').fadeIn();
@@ -112,6 +114,7 @@ $(function() {
     }else{
       $('#audio').get(0).volume = 1.0;
     }
+    $('#replay_button').hide();
   });
 
   $('#seekbar').click(function(e){
