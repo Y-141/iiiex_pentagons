@@ -5,8 +5,8 @@ window.addEventListener('load', function () {
 $(function() {
   //動画，音声開始ボタン
   $('#open_play_button').click(function(){
-    $('#open_bg').hide();
-    $('#open_play_button').hide();
+    $('#open_bg').fadeOut();
+    $('#open_play_button').fadeOut();
     $('#content_fg').show();
     $('#content_bg').show();
     $('#audio').get(0).play();
@@ -24,7 +24,26 @@ $(function() {
   //動画終了時
   $('#fg_video').on('ended',function() {
     $('#audio').get(0).pause();
+    $('#replay_button').fadeIn();
   });
+
+  //replay
+  $('#replay_button').click(function(){
+    // $('#open_bg').hide();
+    $('#replay_button').fadeOut();
+    // $('#content_fg').show();
+    // $('#content_bg').show();
+    $('#audio').get(0).play();
+    $('#fg_video').get(0).currentTime = 0;
+    $('#bg_video').get(0).currentTime = 0;
+    $('#fg_video').get(0).play();
+    $('#bg_video').get(0).play();
+    // $('#button').fadeIn();
+    // $('.button').fadeIn();
+    // $('.button_text').fadeIn();
+    // $('#seekbar').fadeIn();
+    // $('#seekbar_pause_button').fadeIn();
+  })
   
   //----------------------------------------------
   //切り替えボタン
